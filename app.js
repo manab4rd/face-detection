@@ -4,7 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 var app = express();
-var server = app.listen(process.env.PORT || 3210, listen);
+let port = process.env.PORT || 80;
+//var server = app.listen(process.env.PORT || 3210, listen);
 
 app.set('view engine', 'pug');
 
@@ -18,13 +19,14 @@ console.log('Example app listening at http://' + host + ':' + port);
 app.get('/', doThing);
 
 function doThing(req, res){
-	res.render('index');
+	res.send('Helooooooooooo!');
+	//res.render('index');
 
 	// load image from file
-	const mat = cv.imread('./images/img1.jpg');
-	cv.imreadAsync('./images/img1.jpg', (err, mat) => {
-		res.send(mat)
-	})
+	//const mat = cv.imread('./images/img1.jpg');
+	//cv.imreadAsync('./images/img1.jpg', (err, mat) => {
+	//	res.send(mat)
+	//})
 
 	//cv.imshow('a window name', mat);
 	//cv.waitKey();
