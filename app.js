@@ -4,17 +4,17 @@ const fs = require('fs');
 const path = require('path');
 
 var app = express();
-let port = process.env.PORT || 80;
-//var server = app.listen(process.env.PORT || 3210, listen);
+//let port = process.env.PORT || 80;
+var server = app.listen(process.env.PORT || 80, listen);
 
 app.set('view engine', 'pug');
 
 //This call back just tells us that the server has started
-// function listen() {
-// var host = server.address().address;
-// var port = server.address().port;
-// console.log('Example app listening at http://' + host + ':' + port);
-// }
+ function listen() {
+ var host = server.address().address;
+ var port = server.address().port;
+ console.log('Example app listening at http://' + host + ':' + port);
+ }
 
 app.get('/', doThing);
 
