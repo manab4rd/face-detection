@@ -1,7 +1,5 @@
 var express = require('express');
-const cv = require('opencv4nodejs');
-const fs = require('fs');
-const path = require('path');
+
 
 var app = express();
 // let port = process.env.PORT || 80;
@@ -19,7 +17,7 @@ app.set('view engine', 'pug');
 app.get('/', doThing);
 
 function doThing(req, res){
-	res.send('Helooooooooooo!');
+	res.send('Helooooooooooo there!');
 	// res.render('index');
 
 	// load image from file
@@ -33,6 +31,9 @@ function doThing(req, res){
 }
 
 app.get('/image/:imgurl', detectImage);
+const cv = require('opencv4nodejs');
+const fs = require('fs');
+const path = require('path');
 function detectImage(req, res){
 	var imgurl = req.params['imgurl'] || 'daryl-rick.jpg';
 

@@ -35,7 +35,7 @@
     "rebuild": "node-gyp rebuild",
     "clean": "node-gyp clean",
     "build-debug": "node-gyp rebuild --debug",
-   	"start": "node-gyp rebuild"
+   	"start": "node app.js"
   },
   "gypfile": true,
   "dependencies": {
